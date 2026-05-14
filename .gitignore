@@ -1,0 +1,8 @@
+DATASET/
+dataset_split/
+logs/
+models/
+__pycache__/
+*.pyc
+.cascades/
+.DS_Store
