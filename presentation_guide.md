@@ -2,7 +2,7 @@
 
 **Project:** DermalScan AI - Facial Skin Aging Detection using EfficientNetB0, OpenCV, and Streamlit  
 **Date:** 14 May 2026  
-**Presenter:** [Your Name]  
+**Presenter:** NEERAJ KUMAR
 
 This guide outlines how to present each of the 4 milestones to your mentor. For each milestone, include:  
 - **Explanation:** What the milestone covers.  
@@ -103,37 +103,4 @@ Integrates OpenCV Haar cascades for face detection in full images. Predicts skin
 ### Explanation
 Web app for image upload, analysis, visualization, and downloads. Uses Streamlit for UI, integrates detection/prediction. Exports annotated images and CSV logs. Runs locally at http://localhost:8501. Includes export_logs.py (Module 8) for logging predictions to CSV.
 
-### How to Present
-1. Open http://localhost:8501 in browser; show UI (upload, analyze button).
-2. Upload a face image (e.g., from `DATASET/puffy eyes/`); click "Analyse".
-3. Demo results: Annotated image with predictions, age, confidence.
-4. Show downloads: Annotated image (PNG) and CSV (predictions log via export_logs.py).
-5. Explain code: `app.py` (UI logic, spinner, success messages); `export_logs.py` (CSV export function).
-6. Highlight: "Headless mode for demo; integrates all pipelines. Module 8 handles logging for records."
 
-**Key Files:** `app.py`, `export_logs.py`.
-
-### Possible Questions & Answers
-- **Q: Why Streamlit?**  
-  A: Easy web UI for Python; no frontend skills needed.
-- **Q: Deployment?**  
-  A: Local for demo; can deploy to Streamlit Cloud or server.
-- **Q: Export features (Module 8)?**  
-  A: export_logs.py generates CSV with predictions, timestamps, and classes for records/download.
-- **Q: Performance?**  
-  A: Fast inference (~1-2s); GPU helps.
-- **Q: User experience?**  
-  A: Simple upload-analyze flow; handles errors (e.g., no model).
-
----
-
-## Overall Tips for Presentation
-- **Flow:** Start with data (Milestone 1), build to model (2), pipeline (3), app (4).
-- **Demos:** Use live runs; have backups if issues.
-- **Time:** 10-15 mins per milestone.
-- **Backup:** If app fails, show code and logs.
-- **Questions:** Be ready for technical depth; reference code.
-
-**Final Demo:** Upload an image in the app and show full pipeline in action.
-
-Convert this Markdown to PDF using tools like Pandoc or online converters for submission.
