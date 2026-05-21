@@ -29,15 +29,7 @@ This milestone involves organizing raw images into labeled folders, splitting th
 
 **Key Files:** `DATASET/`, `dataset_setup.py`, `preprocessing.py` (lines 15-35).
 
-### Possible Questions & Answers
-- **Q: How did you ensure data balance?**  
-  A: Checked class distributions manually; augmentation helps with minority classes.
-- **Q: Why one-hot encoding?**  
-  A: For multi-class classification; TensorFlow/Keras handles it via `categorical` mode.
-- **Q: Any data cleaning?**  
-  A: Assumed clean; in real-world, would remove blurs/noises.
-- **Q: Dataset size?**  
-  A: ~1200 images; sufficient for demo, but larger datasets improve accuracy.
+
 
 ---
 
@@ -56,17 +48,7 @@ Trains an EfficientNetB0 model with transfer learning: base frozen initially, th
 
 **Key Files:** `train_model.py`, `logs/training_log.csv`, `logs/training_curves.png`, `models/dermalscan_efficientnetb0.h5`.
 
-### Possible Questions & Answers
-- **Q: Why EfficientNetB0?**  
-  A: Lightweight, good accuracy; pre-trained on ImageNet for transfer learning.
-- **Q: Training time?**  
-  A: ~10-15 mins per phase with GPU; callbacks prevent overfitting.
-- **Q: Validation strategy?**  
-  A: 15% val set; early stopping on val_accuracy with patience=8.
-- **Q: Accuracy?**  
-  A: 87.85% test; good for 4 classes; could improve with more data/augmentation.
-- **Q: GPU usage?**  
-  A: tensorflow-metal enables Metal on Apple M1; logs show GPU activation.
+
 
 ---
 
@@ -84,17 +66,7 @@ Integrates OpenCV Haar cascades for face detection in full images. Predicts skin
 
 **Key Files:** `face_detection_pipeline.py`, `cascades/haarcascade_frontalface_default.xml`.
 
-### Possible Questions & Answers
-- **Q: Why Haar cascades?**  
-  A: Fast, lightweight for real-time detection; OpenCV built-in.
-- **Q: Detection accuracy?**  
-  A: Works on clear faces; parameters tuned for sensitivity (scaleFactor=1.05, minNeighbors=3).
-- **Q: Prediction output?**  
-  A: Top class with confidence; sorted probabilities for all classes.
-- **Q: Age ranges?**  
-  A: Estimated based on conditions (e.g., wrinkles: 50-70); not ML-predicted, rule-based.
-- **Q: Handling crops?**  
-  A: If no face detected, assumes whole image is face (for dataset compatibility).
+
 
 ---
 
